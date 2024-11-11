@@ -1,0 +1,137 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #e4e8e8;
+}
+
+.container {
+  width: 80%;
+  margin: 0 auto;
+}
+
+/* Navbar styling */
+nav {
+  background-color: #eff4f6;
+  display: flex;
+  justify-content: space-between;  /* Ensures content is spaced out between the brand and buttons */
+  align-items: center;  /* Vertically centers the brand and buttons */
+  padding: 20px 30px 20px 800px;  /* Retaining your padding */
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.25);
+  height: 60px;  /* Set a fixed height */
+  max-width: 1200px;
+  margin: 20px auto;  /* Center the navbar */
+  border-radius: 20px;
+  position: relative;
+  z-index: 9999;
+}
+
+/* Brand name styling */
+.navbar-logo {
+  font-size: 24px;
+  font-weight: bold;
+  color: #333;
+  margin: 0;
+}
+
+/* Navbar list styling */
+nav ul {
+  display: flex;
+  justify-content: flex-end;  /* Align buttons to the right */
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  gap: 20px;
+}
+
+/* Navbar button styling */
+nav ul li a {
+  padding: 8px 20px;
+  background-color: #0d3a4b;
+  color: #f5f3f3;
+  text-decoration: none;
+  border-radius: 5px;
+  font-size: 14px;
+  transition: background-color 0.3s;
+}
+
+nav ul li a:hover {
+  background-color: #181b1f;
+}
+
+
+/* Container for the blog cards */
+.blog-cards {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  padding: 20px;
+  box-sizing: border-box;
+  margin-top: 10px;
+}
+
+h2 {
+  margin-top: 100px;
+  padding-bottom: 20px;
+}
+
+/* Blog Card styling */
+.blog-card {
+  
+  padding: 20px;
+  background-color:rgb(166, 163, 163);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  position: relative;
+}
+
+.blog-card .author {
+  font-weight: bold;
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+.blog-card .btn-group {
+  display: flex;
+  gap: 10px;
+}
+
+.blog-card .btn {
+  padding: 8px 15px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.3s;
+}
+
+.blog-card .btn:hover {
+  background-color: #0056b3;
+}
+
+.blog-card .btn.delete {
+  background-color: #dc3545;
+}
+
+.blog-card .btn.delete:hover {
+  background-color: #c82333;
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+  .blog-cards {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 900px) {
+  .blog-cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .blog-cards {
+    grid-template-columns: 1fr;
+  }
+}
