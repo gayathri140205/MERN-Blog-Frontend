@@ -4,7 +4,7 @@ import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';  // Import routing components
 import { AuthProvider } from './context/AuthContext';  // Your AuthProvider
 import Navbar from './Components/Navbar';  // Navbar Component
-import Home from './pages/Home';  // Home page component
+import Home from './Pages/Home';  // Home page component
 import Login from './Components/Login';  // Login component
 import Signup from './Components/Signup';  // Signup component
 import CreateBlog from './Components/CreateBlog';  // Create Blog component
