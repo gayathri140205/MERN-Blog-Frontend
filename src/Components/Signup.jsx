@@ -4,7 +4,7 @@ import React, { useState, useContext } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import { AuthContext } from '../context/AuthContext.jsx';
-import '../styles/Signup.css';
+import '../styles/signup.css';
 
 const Signup = () => {
   const [name, setName] = useState('');
