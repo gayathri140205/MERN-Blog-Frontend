@@ -2,20 +2,20 @@
 // eslint-disable-next-line no-unused-vars
 import React, { useState } from "react";
 
-const BlogCard = ({ blog, onDelete, onUpdate }) => {
+const BlogCard = ({ blog, onUpdate }) => {
   const [isEditing, setIsEditing] = useState(false);
   const [updatedTitle, setUpdatedTitle] = useState(blog.title);
   const [updatedContent, setUpdatedContent] = useState(blog.content);
 
   // Handle the deletion of the card
-  const handleDelete = () => {
-    onDelete(blog._id); // Remove from parent component (UI update)
-  };
+  // const handleDelete = () => {
+  //   onDelete(blog._id); // Remove from parent component (UI update)
+  // };
 
-  // Toggle the edit mode
-  const handleEdit = () => {
-    setIsEditing(!isEditing);
-  };
+  // // Toggle the edit mode
+  // const handleEdit = () => {
+  //   setIsEditing(!isEditing);
+  // };
 
   // Save the updated blog (without backend request)
   const handleSave = () => {
@@ -47,8 +47,8 @@ const BlogCard = ({ blog, onDelete, onUpdate }) => {
         </div>
       )}
       <span>{blog.author}</span>
-      <button onClick={handleEdit}>{isEditing ? "Cancel" : "Edit"}</button>
-      <button onClick={handleDelete}>Delete</button>
+      {/* <button onClick={handleEdit}>{isEditing ? "Cancel" : "Edit"}</button>
+      <button onClick={handleDelete}>Delete</button> */}
     </div>
   );
 };

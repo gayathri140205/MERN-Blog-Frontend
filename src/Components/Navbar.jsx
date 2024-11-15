@@ -6,30 +6,25 @@ import { AuthContext } from '../context/AuthContext.jsx';
 
 const Navbar = () => {
   const { user } = useContext(AuthContext);
-  const navigate = useNavigate(); // Hook for navigation
+  const navigate = useNavigate();
 
-  const handleCreateBlogClick = () => {
+  const handleCreateBlogClick = (e) => {
     if (!user) {
-      alert("Please sign up first.");
+      e.preventDefault(); // Prevent default Link behavior
+      alert('Please sign up first.');
       navigate('/signup'); // Redirect to signup page if not signed in
     }
   };
 
   return (
-    
     <nav>
-
-
       <ul>
-       
         <li>
           <Link to="/">Home</Link>
         </li>
         {!user ? (
           <>
-            <li>
-              <Link to="/login">Login</Link>
-            </li>
+           
             <li>
               <Link to="/signup">Signup</Link>
             </li>
@@ -37,11 +32,11 @@ const Navbar = () => {
         ) : (
           <li>Welcome, {user.name}</li>
         )}
-        {user && (
-          <li>
-            <Link to="/create" onClick={handleCreateBlogClick}>Create Blog</Link>
-          </li>
-        )}
+        <li>
+          <Link to={user ? '/create' : '#'} onClick={handleCreateBlogClick}>
+            Create Blog
+          </Link>
+        </li>
       </ul>
     </nav>
   );

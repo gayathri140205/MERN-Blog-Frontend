@@ -1,25 +1,31 @@
+// src/components/Signup.js
 // eslint-disable-next-line no-unused-vars
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
+import { AuthContext } from '../context/AuthContext.jsx';
+import '../styles/Signup.css';
 
 const Signup = () => {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const navigate = useNavigate();  // Use useNavigate instead of useHistory
+  // eslint-disable-next-line no-unused-vars
+  const { getRedirectPath } = useContext(AuthContext);
+  const navigate = useNavigate();
 
   const handleSignup = (e) => {
     e.preventDefault();
 
     axios
       .post('https://mern-blog-backend-mbdx.onrender.com/api/auth/signup', { name, email, password })
-      // eslint-disable-next-line no-unused-vars
-      .then((response) => {
-        navigate('/login');  // Use navigate() to redirect
+      .then(() => {
+        alert('Signed up successfully!');
+        navigate('/login'); // Redirect to login page
       })
       .catch((error) => {
         console.error(error.response ? error.response.data : error.message);
+        alert('Signup failed. Please try again.');
       });
   };
 
